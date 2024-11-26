@@ -10,30 +10,48 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Moi</a></li>
+                <li><a href="about.html">Objectifs</a></li>
+                <li><a href="projects.html">Experience</a></li>
+                <!-- <li><a href="contact.html">Contact</a></li> -->
             </ul>
         </nav>
     </header>
 
-    <section class="projects">
-        <h1>Mes projets</h1>
-        <div class="project">
-            <img src="assets/images/project1.png" alt="Projet 1">
-            <h3>Projet 1</h3>
-            <p>Une description plus détaillée de mon premier projet de design UX/UI.</p>
+    <section>
+
+        <div class="image-split-container">
+            <!-- Colonnes interactives -->
+            <div class="hover-zone zone1" data-image="assets/images/page3/Education/Frame 27.svg" data-text="Texte pour la colonne 1">
+            </div>
+            <div class="hover-zone zone2" data-image="assets/images/page3/Education/Frame 28.svg" data-text="Texte pour la colonne 2"></div>
+            <div class="hover-zone zone3" data-image="assets/images/page3/Education/Frame 29.svg" data-text="Texte pour la colonne 3"></div>
+        
+            <!-- Image principale -->
+            <img id="main-image" src="assets/images/page3/Education/Frame 26.svg" alt="Image principale">
         </div>
-        <div class="project">
-            <img src="assets/images/project2.png" alt="Projet 2">
-            <h3>Projet 2</h3>
-            <p>Description du projet 2.</p>
+        
+        <!-- Conteneur de texte dynamique sous chaque colonne -->
+        <div id="text-container">
+            <p id="hover-text">Survolez une colonne pour afficher du texte.</p>
         </div>
+        
+        
+        
+        
     </section>
 
-    <footer>
-        <p>© 2024 Marion, tous droits réservés.</p>
+    
+    <footer >
+        <section class="image-me"><img src="assets/images/profile.svg" alt="Marion - Profil" class="profile-img" ></section>
+        <h1>Contact me!</h1>
+            <nav>
+                <ul>
+                    <li><a href="">marionlepeu@gmail.com</a></li>
+                    <li><a href="">+33652630728</a></li>
+                    <li><a href="https://www.linkedin.com/in/marion-lepeu-502227220/">LinkedIn</a></li>
+                </ul>
+            </nav>
     </footer>
 
     <script src="assets/js/app.js"></script>

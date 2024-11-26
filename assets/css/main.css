@@ -1,60 +1,354 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+:root {
+    /*colors*/
+    --accent-color-purple: #7A13AE; /* Couleur principale violet foncé */
+    --accent-color-orange: #E37D2F; /* Couleur principale violet foncé */
+    --accent-color-pink: #E3417A; /* Couleur principale violet foncé */
+    --primary-color: #7A13AE; /* Couleur principale violet foncé */
+    --secondary-color: #ffffff6d; /* Couleur secondaire orange */
+    --background-color: #F3ECFC; /* Couleur de fond */
+    --text-color: #333333; /* Couleur du texte */
+
+    /*fonts*/
+    /*josh bold 24 - josh regular 24 - josh semi bold 32*/
+    --font-family: 'Jost', sans-serif; /* Typographie principale */
+    --font-size-title: 32px; /* Taille de titre */
+    --font-size-content: 24px; /* Taille de titre */
+    --font-weight:bold;
 }
 
+
+/* annimation personnages */
+.image-slider {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity s ease-in-out;
+}
+
+.image-slider img.active {
+    opacity: 1;
+}
+
+
+/*animation du soleil */
+.image-sliderS {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-sliderS img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity s ease-in-out;
+}
+
+.image-sliderS img.active {
+    opacity: 1;
+}
+
+
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+/* Images du g=fond de la page index */
+
+.image-top-left {
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Déplacement depuis le haut */
+    left: 10px; /* Déplacement depuis la gauche */
+    width: 150px; /* Ajuster la taille */
+    height: auto;
+    z-index: -1; /* S'assurer que l'image est au-dessus du fond */
+}
+
+.image-top-right-background {
+    position: absolute; /* Positionnement absolu */
+    top: 100px; /* Déplacement depuis le haut */
+    right: 100px; /* Déplacement depuis la gauche */
+    width: auto; /* Ajuster la taille */
+    height: auto;
+    z-index: -2; /* S'assurer que l'image est au-dessus du fond */
+}
+/* .image-top-right {
+    position: absolute;
+    top: 100px; 
+    right: 10px; 
+    width: 800px; 
+    height: auto;
+    z-index: 10; 
+} */
+
+.image-bottom-right {
+    position: absolute; /* Positionnement absolu */
+    bottom: 10px; /* Déplacement depuis le bas */
+    right: 10px; /* Déplacement depuis la droite */
+    width: 200px; /* Ajuster la taille */
+    height: auto;
+    z-index: -1; /* Toujours au-dessus du fond */
+}
+/*image du fond de la page about*/
+.image-all-background{
+    position: absolute; /* Positionnement absolu */
+    top: 0px; /* Déplacement depuis le haut */
+    left: 0px; /* Déplacement depuis la gauche */
+    width: 100vw; /* Largeur de l'écran en unités viewport */
+    height: 100vh; /* Hauteur de l'écran en unités viewport */
+    object-fit: cover; /* Maintient les proportions et remplit l'espace */
+    z-index: -2; /* Derrière le contenu principal */
+}
+
+
+/* Navigation*/
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    background-color: var(--secondary-color);
+    /*color: white;*/
+    padding: 5px 0;
 }
 
 header nav ul {
     list-style: none;
-    text-align: center;
+    text-align: end;
     padding: 0;
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 50px;
 }
 
 header nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 18px;
 }
+/* Effet hover */
+header nav ul li a:hover {
+    background-color:white; 
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
 
+
+
+
+
+/* CONTENT */
 .hero {
-    text-align: center;
-    padding: 50px 0;
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: left; /* Centre le texte à l'intérieur des éléments */
+    margin: 50px 0;
 }
 
 .hero img {
     border-radius: 50%;
-    width: 150px;
+    /* width: 150px;
+    height: 150px;            */
+    /* object-fit: cover;  */
+    padding: 0 0px ;
 }
 
-.projects {
-    text-align: center;
-    padding: 30px 0;
-}
-
-.projects .project {
-    display: inline-block;
-    margin: 20px;
+.description {
     text-align: left;
+    margin: 50px 200px;
 }
 
+/*metre le texte à droite*/
+.hero-right {
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: right; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: center; /* Centre le texte à l'intérieur des éléments */
+    padding-left: 0;
+}
+.description-center {
+    text-align: center;
+    margin: 200px 100px;
+}
+
+
+/*colonnes de la page experiences*/
+.two-columns {
+    display: flex;
+    gap: 20px; /* Espacement entre les colonnes */
+    padding: 20px; /* Espacement interne de la section */
+}
+
+.column-left {
+    flex: 1; /* Chaque colonne prend une taille égale */
+    padding: -2000px 10px; /* Espacement interne pour chaque colonne */
+    background-color: transparent; /* Couleur de fond pour chaque colonne */
+    /*border: 1px solid #ddd; /* Bordure pour un meilleur visuel */
+}
+.column-right {
+    flex: 1; /* Chaque colonne prend une taille égale */
+    padding: 10px; /* Espacement interne pour chaque colonne */
+    background-color: transparent; /* Couleur de fond pour chaque colonne */
+    /*border: 1px solid #ddd; /* Bordure pour un meilleur visuel */
+    float: right;
+}
+.description-column {
+    text-align: left;
+    margin: 0px 0px;
+}
+.description-column2 {
+    text-align: right;
+    margin: 0px 0px;
+}
+
+
+@media (max-width: 768px) {
+    .two-columns {
+        flex-direction: column;
+    }
+}
+
+/*Page 3*/
+
+/* Conteneur principal */
+.image-split-container {
+    position: relative;
+    width: 100%; /* Largeur du conteneur */
+    height: 500px; /* Hauteur de l'image */
+    display: flex;
+    justify-content: space-between; /* Espacement entre les colonnes */
+    margin-bottom: 100PX;
+}
+
+/* Colonnes interactives */
+.hover-zone {
+    flex: 1; /* Divise le conteneur en colonnes égales */
+    cursor: pointer;
+    position: relative;
+}
+
+.hover-zone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Optionnel : ajoute un effet visuel pour chaque zone */
+    z-index: 1;
+
+}
+
+/* Image principale */
+#main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garde les proportions tout en remplissant l'espace */
+    z-index: 0;
+    transition: opacity 0.5s ease; /* Transition fluide */
+}
+
+/* Conteneur de texte dynamique sous les colonnes */
+#text-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Texte dynamique */
+#hover-text {
+    font-size: 1.2em;
+    color: var(--accent-color-purple);
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Initialement masqué */
+}
+
+#hover-text.visible {
+    opacity: 1; /* Affiche le texte lorsqu'il est visible */
+}
+
+@media (max-width: 768px) {
+    .image-split-container {
+        flex-direction: column;
+    }
+
+    .hover-zone {
+        height: 100px; /* Ajuste la hauteur des zones */
+    }
+}
+
+
+
+
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--secondary-color);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px 0;
-    position: absolute;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
+
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: space-evenly ; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: left; /* Centre le texte à l'intérieur des éléments */
+    margin: 0px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    text-align: end;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 50px;
+}
+
+footer nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* Effet hover */
+footer nav ul li a:hover {
+    background-color:white; 
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.image-me img{
+    /* border-radius: 50%; */
+    width: 150px;
+    height: 150px;            
+    object-fit: cover; 
+    margin-right: 50px;
 }
